@@ -3,7 +3,7 @@ local cmd = vim.cmd
 local g = vim.g
 
 -- General options
--- opt.relativenumber = true
+opt.relativenumber = true
 opt.number = true
 opt.wrap = false
 
