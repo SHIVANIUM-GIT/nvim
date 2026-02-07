@@ -6,7 +6,6 @@ You can tweak names later, but this is a **solid, professional README**.
 
 ---
 
-````md
 # 🚀 Neovim Configuration (Lazy.nvim + Lua)
 
 A modern, fast, and clean **Neovim configuration** built with **Lua** and **lazy.nvim**.  
@@ -46,7 +45,6 @@ Optimized for development, DevOps, and daily productivity.
             ├── lualine.lua
             ├── nvim-tree.lua
             └── telescope.lua
-````
 
 ---
 
