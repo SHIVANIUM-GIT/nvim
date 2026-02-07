@@ -4,8 +4,6 @@ It covers **everything**: install steps, Nerd Font, dependencies, structure, and
 
 You can tweak names later, but this is a **solid, professional README**.
 
----
-
 # 🚀 Neovim Configuration (Lazy.nvim + Lua)
 
 A modern, fast, and clean **Neovim configuration** built with **Lua** and **lazy.nvim**.  
@@ -46,7 +44,6 @@ Optimized for development, DevOps, and daily productivity.
             ├── nvim-tree.lua
             └── telescope.lua
 
----
 
 ## 🧰 Requirements
 
