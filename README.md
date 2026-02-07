@@ -1,12 +1,3 @@
-Got it 👍
-Your content is **good**, but the Markdown is **broken in a few places** (missing headings, code block not closed, section order).
-Below is a **fully repaired, clean, GitHub-ready `README.md`**.
-
-👉 You can **copy-paste this exactly** into `README.md`.
-
----
-
-````md
 # 🚀 Neovim Configuration (Lazy.nvim + Lua)
 
 A modern, fast, and clean **Neovim configuration** built with **Lua** and **lazy.nvim**.  
