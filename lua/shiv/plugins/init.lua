@@ -1,3 +1,4 @@
 return {
-    { "nvim-tree/nvim-tree.lua", config = function() require("shiv.plugins.nvim-tree") end },
+    require("shiv.plugins.nvim-tree"),
+    require("shiv.plugins.telescope"),
 }
