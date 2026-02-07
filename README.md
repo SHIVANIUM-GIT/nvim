@@ -1,9 +1,12 @@
-Nice repo 👍
-I’ll give you a **ready-to-use `README.md`** that you can **copy-paste directly** into your GitHub repo.
-It covers **everything**: install steps, Nerd Font, dependencies, structure, and usage.
+Got it 👍
+Your content is **good**, but the Markdown is **broken in a few places** (missing headings, code block not closed, section order).
+Below is a **fully repaired, clean, GitHub-ready `README.md`**.
 
-You can tweak names later, but this is a **solid, professional README**.
+👉 You can **copy-paste this exactly** into `README.md`.
 
+---
+
+````md
 # 🚀 Neovim Configuration (Lazy.nvim + Lua)
 
 A modern, fast, and clean **Neovim configuration** built with **Lua** and **lazy.nvim**.  
@@ -15,8 +18,8 @@ Optimized for development, DevOps, and daily productivity.
 
 - ⚡ Fast startup with `lazy.nvim`
 - 🎨 Beautiful statusline using **lualine**
-- 🔍 Fuzzy finding with Telescope
-- 🌳 File explorer with nvim-tree
+- 🔍 Fuzzy finding with **Telescope**
+- 🌳 File explorer with **nvim-tree**
 - 🧠 Clean Lua-based config structure
 - 🔤 Nerd Font support (icons everywhere)
 
@@ -43,7 +46,9 @@ Optimized for development, DevOps, and daily productivity.
             ├── lualine.lua
             ├── nvim-tree.lua
             └── telescope.lua
+````
 
+---
 
 ## 🧰 Requirements
 
@@ -59,13 +64,15 @@ nvim --version
 
 ## 🔤 Nerd Font (IMPORTANT)
 
-This config uses icons. You **must** install a Nerd Font.
+This configuration uses icons. You **must** install a Nerd Font.
 
 ### ✅ Recommended Font
 
 **JetBrainsMono Nerd Font Mono**
 
-### Install Nerd Font
+---
+
+### 📥 Install Nerd Font
 
 ```bash
 mkdir -p ~/.local/share/fonts
@@ -75,13 +82,17 @@ unzip JetBrainsMono.zip
 fc-cache -fv
 ```
 
-### Verify Font
+---
+
+### 🔍 Verify Font Installation
 
 ```bash
 fc-list | grep -i nerd
 ```
 
-### Set Font in Terminal
+---
+
+### 🖥 Set Font in Terminal
 
 Set your terminal font to:
 
@@ -89,19 +100,17 @@ Set your terminal font to:
 JetBrainsMono Nerd Font Mono
 ```
 
-Restart terminal after setting.
+Then **restart your terminal**.
 
 ---
 
-## 🧪 Font Test
-
-Run in terminal:
+### 🧪 Font Test
 
 ```bash
 echo "     "
 ```
 
-If icons render correctly → font is working ✅
+If icons render correctly → Nerd Font is working ✅
 
 ---
 
@@ -113,11 +122,15 @@ If icons render correctly → font is working ✅
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
-### Clone the repo
+---
+
+### Clone the repository
 
 ```bash
 git clone https://github.com/SHIVANIUM-GIT/nvim.git ~/.config/nvim
 ```
+
+---
 
 ### Start Neovim
 
@@ -125,7 +138,7 @@ git clone https://github.com/SHIVANIUM-GIT/nvim.git ~/.config/nvim
 nvim
 ```
 
-`lazy.nvim` will auto-install all plugins 🎉
+`lazy.nvim` will automatically install all plugins 🎉
 
 ---
 
@@ -155,17 +168,17 @@ Uses Powerline-style separators (Nerd Font required).
 
 Keymaps are defined in:
 
-```
+```text
 lua/shiv/core/keymaps.lua
 ```
 
 Leader key:
 
-```
+```text
 <Space>
 ```
 
-(Add custom keymaps as needed)
+(Add your own custom mappings as needed.)
 
 ---
 
@@ -173,14 +186,14 @@ Leader key:
 
 Editor options are defined in:
 
-```
+```text
 lua/shiv/core/options.lua
 ```
 
 Includes:
 
 * 2-space indentation
-* Relative numbers
+* Relative line numbers
 * Smart search
 * Better defaults
 
@@ -202,7 +215,7 @@ Inside Neovim:
 
 * Ensure terminal font is **JetBrainsMono Nerd Font Mono**
 * Restart terminal
-* Run font test command
+* Run the font test command
 
 ### Plugin errors?
 
@@ -223,18 +236,24 @@ Inside Neovim:
 
 ## 📜 License
 
-MIT (or choose your own)
+MIT
 
 ```
 
 ---
 
-## ✅ What I can do next (optional)
-- Customize README for **DevOps focus**
-- Add screenshots section
-- Add **keybindings table**
-- Improve repo branding (badges, shields)
-- Review your config file-by-file
+## ✅ What I fixed
+- Closed all code blocks properly
+- Restored missing section headers
+- Fixed broken Markdown rendering
+- Cleaned spacing & hierarchy
+- GitHub-friendly formatting
 
-If you want changes (shorter README, more advanced, screenshots, etc.), tell me your preference and I’ll refine it 👌
+If you want next:
+- Add screenshots section
+- Add keybinding table
+- Add OS-specific install steps
+- Add badges (stars, license, Neovim)
+
+Just tell me 👌
 ```
