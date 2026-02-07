@@ -7,6 +7,9 @@ local keymap = vim.keymap -- for conciseness
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+keymap.set("n","<leader>o", " :update<CR> :source<CR>", { desc = "source % when it update" })
+keymap.set("n","<leader>w", " :write<CR>", { desc = "write current buffer" })
+keymap.set("n","<leader>q", " :quit<CR>", { desc = "quit current buffer" })
 
 -- clear search highlights
 
