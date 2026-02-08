@@ -1,42 +1,43 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  config = function()
-    local ok, configs = pcall(require, "nvim-treesitter.configs")
-    if not ok then
-      return
-    end
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
 
-    configs.setup({
-      ensure_installed = {
-        "python",
-        "lua",
-        "bash",
-        "go",
-        "dockerfile",
-        "yaml",
-        "json",
-        "toml",
-        "hcl",
-        "helm",
-        "markdown",
-        "regex",
-        "vim",
-        "groovy",
-        "gitignore",
-      },
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        -- Languages to install
+        ensure_installed = {
+          "c",
+          "lua",
+          "vim",
+          "vimdoc",
+          "query",
+          "markdown",
+          "markdown_inline",
+        },
 
-      auto_install = true,
+        -- Automatically install missing parsers
+        auto_install = true,
 
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
+        -- Syntax highlighting
+        highlight = {
+          enable = true,
 
-      indent = {
-        enable = true,
-        disable = { "yaml" },
-      },
-    })
-  end,
+          -- Disable highlighting for large files (performance)
+          disable = function(_, buf)
+            local max_filesize = 100 * 1024 -- 100 KB
+            local ok, stats = pcall(
+              vim.loop.fs_stat,
+              vim.api.nvim_buf_get_name(buf)
+            )
+
+            return ok and stats and stats.size > max_filesize
+          end,
+
+          -- Use Treesitter only (recommended)
+          additional_vim_regex_highlighting = false,
+        },
+      })
+    end,
+  },
 }
