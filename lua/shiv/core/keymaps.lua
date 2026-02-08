@@ -27,7 +27,7 @@ keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) 
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
--- switch between splits
+--switch between splits
 keymap.set("n", "<leader>h", "<C-w>h", { desc = "Move to left split" })
 keymap.set("n", "<leader>j", "<C-w>j", { desc = "Move to bottom split" })
 keymap.set("n", "<leader>k", "<C-w>k", { desc = "Move to top split" })
