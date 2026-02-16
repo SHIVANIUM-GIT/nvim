@@ -44,12 +44,12 @@ return {
 
       pickers = {
         find_files = {
-          hidden = true, -- show dotfiles
+          hidden = true,
         },
       },
     })
 
-    telescope.load_extension("fzf")
+    pcall(telescope.load_extension, "fzf")
 
     -- keymaps
     local keymap = vim.keymap
