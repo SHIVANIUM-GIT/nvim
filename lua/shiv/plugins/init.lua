@@ -3,9 +3,10 @@ return {
   require("shiv.plugins.telescope"),
   require("shiv.plugins.lualine"),
   require("shiv.plugins.treesitter"),
-  require("shiv.plugins.autocompletion"),
   require("shiv.plugins.gitsigns"),
   require("shiv.plugins.indent-blankline"),
   require("shiv.plugins.undotree"),  
   require("shiv.plugins.autopairs"),
+  require("shiv.plugins.git-stuff"),
+  require("shiv.plugins.lsp"),
 }
