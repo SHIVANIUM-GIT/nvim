@@ -7,244 +7,141 @@ Optimized for development, DevOps, and daily productivity.
 
 ## ✨ Features
 
-- ⚡ Fast startup with `lazy.nvim`
-- 🎨 Beautiful statusline using **lualine**
-- 🔍 Fuzzy finding with **Telescope**
-- 🌳 File explorer with **nvim-tree**
-- 🧠 Clean Lua-based config structure
-- 🔤 Nerd Font support (icons everywhere)
-
----
-
-## 📸 Preview
-> (Optional: add screenshots later)
+- ⚡ **Fast startup** with `lazy.nvim`
+- 🎨 **Beautiful Aesthetics** with native transparent background & **lualine**
+- 🧠 **Native LSP** powered by **Mason** & `vim.lsp.config` for zero-friction intellisense
+- 🪄 **Auto-Formatting** on save powered by **conform.nvim**
+- 🌳 **Syntax Highlighting** powered by **nvim-treesitter**
+- 🔍 **Fuzzy finding** with **Telescope**
+- 🐙 **Git Integration** with custom shortcuts (`git-stuff`) and **gitsigns**
+- 🔤 **Nerd Font** support (icons everywhere)
 
 ---
 
 ## 📁 Directory Structure
 
 ```text
-~/.config/nvim
+~/.config/nvim (or ~/AppData/Local/nvim on Windows)
 ├── init.lua
 ├── lazy-lock.json
 └── lua/
     └── shiv/
+        ├── init.lua          # Main Lua entry point
+        ├── lazy.lua          # Lazy.nvim setup
         ├── core/
-        │   ├── options.lua
-        │   └── keymaps.lua
+        │   ├── init.lua      # Core entry point
+        │   ├── keymaps.lua   # Global keybindings
+        │   └── options.lua   # Editor settings (numbers, indent, etc)
         └── plugins/
-            ├── lazy.lua
-            ├── lualine.lua
-            ├── nvim-tree.lua
-            └── telescope.lua
-````
+            ├── autopairs.lua       # Auto-close brackets
+            ├── formatting.lua      # Conform (Format on Save)
+            ├── git-stuff.lua       # Custom Git Shortcuts
+            ├── gitsigns.lua        # Git gutter integration
+            ├── indent-blankline.lua# Indent guides
+            ├── init.lua            # Lazy Plugin Registry
+            ├── lsp.lua             # Mason, cmp, and LSP setup
+            ├── lualine.lua         # Statusline
+            ├── nvim-tree.lua       # File explorer
+            ├── telescope.lua       # Fuzzy finder
+            ├── treesitter.lua      # Syntax Highlighting
+            └── undotree.lua        # Undo history visualizer
+```
 
 ---
 
 ## 🧰 Requirements
 
-### Neovim
+### Neovim & Compilers
+- ✔ Recommended: **Neovim ≥ 0.11** (for native `vim.lsp.config` support)
+- ✔ C Compiler: **GCC** or **Clang** (Required by Treesitter to compile language parsers)
+- ✔ Node.js (`npm`): (Required by Mason to download certain language servers)
 
-```bash
-nvim --version
-```
-
-✔ Recommended: **Neovim ≥ 0.9**
+*(On Windows, you can quickly install the compiler using Scoop: `scoop install gcc`)*
 
 ---
 
 ## 🔤 Nerd Font (IMPORTANT)
 
-This configuration uses icons. You **must** install a Nerd Font.
+This configuration heavily uses icons. You **must** install a Nerd Font.
 
 ### ✅ Recommended Font
-
 **JetBrainsMono Nerd Font Mono**
 
----
-
-### 📥 Install Nerd Font
-
-```bash
-mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts
-curl -fLo JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-unzip JetBrainsMono.zip
-fc-cache -fv
-```
-
----
-
-### 🔍 Verify Font Installation
-
-```bash
-fc-list | grep -i nerd
-```
-
----
-
-### 🖥 Set Font in Terminal
-
-Set your terminal font to:
-
-```
-JetBrainsMono Nerd Font Mono
-```
-
-Then **restart your terminal**.
-
----
-
-### 🧪 Font Test
-
-```bash
-echo "     "
-```
-
-If icons render correctly → Nerd Font is working ✅
+After installing it, **set your terminal font** to `JetBrainsMono Nerd Font Mono` and restart your terminal.
 
 ---
 
 ## 📦 Install This Config
 
-### Backup existing config (if any)
-
+### 1. Backup existing config (if any)
 ```bash
+# Linux / macOS
 mv ~/.config/nvim ~/.config/nvim.bak
+
+# Windows (PowerShell)
+Rename-Item ~\AppData\Local\nvim nvim.bak
 ```
 
----
-
-### Clone the repository
-
+### 2. Clone the repository
 ```bash
 git clone https://github.com/SHIVANIUM-GIT/nvim.git ~/.config/nvim
 ```
 
----
-
-### Start Neovim
-
+### 3. Start Neovim
 ```bash
 nvim
 ```
-
-`lazy.nvim` will automatically install all plugins 🎉
+`lazy.nvim` will automatically download and install all plugins. **Mason** and **Treesitter** will begin downloading your language servers and parsers in the background.
 
 ---
 
 ## 🔌 Included Plugins
 
-* **lazy.nvim** – Plugin manager
-* **lualine.nvim** – Statusline
-* **nvim-tree.lua** – File explorer
-* **telescope.nvim** – Fuzzy finder
-* **nvim-web-devicons** – Icons
-
----
-
-## 📊 Statusline (lualine)
-
-* Mode indicator
-* Git branch & diff
-* Diagnostics
-* File name
-* Cursor location
-
-Uses Powerline-style separators (Nerd Font required).
+- **lazy.nvim** – Plugin manager
+- **mason.nvim** - Portable package manager for LSPs & Formatters
+- **nvim-cmp** & **LuaSnip** - Powerful autocompletion engine
+- **conform.nvim** - Lightweight formatter with auto-save support
+- **nvim-treesitter** - Advanced syntax highlighting
+- **telescope.nvim** – Fuzzy finder
+- **nvim-tree.lua** – File explorer
+- **lualine.nvim** – Statusline
+- **nvim-autopairs** – Auto-closes brackets and quotes
+- **indent-blankline.nvim** – Indentation guides
+- **undotree** – Visualizes undo history
 
 ---
 
 ## ⌨️ Keymaps
 
-Keymaps are defined in:
-
+Keymaps are centrally defined in:
 ```text
 lua/shiv/core/keymaps.lua
 ```
 
-Leader key:
+Leader key: `<Space>`
 
-```text
-<Space>
-```
-
-(Add your own custom mappings as needed.)
-
----
-
-## ⚙️ Options
-
-Editor options are defined in:
-
-```text
-lua/shiv/core/options.lua
-```
-
-Includes:
-
-* 2-space indentation
-* Relative line numbers
-* Smart search
-* Better defaults
+### 🐙 Custom Git Shortcuts
+* `:Gs` - Git Status
+* `:Ga` - Git Add All
+* `:Gc "message"` - Git Commit
+* `:Gp` - Git Push
+* `:Gl` - Git Pull
+* `:Gf` - Git Fetch
+* `:Glog` - Git Log
 
 ---
 
 ## 🔄 Update Plugins
-
-Inside Neovim:
-
+To update all your plugins, open Neovim and run:
 ```vim
 :Lazy sync
 ```
-
----
-
-## 🧯 Troubleshooting
-
-### Icons not showing?
-
-* Ensure terminal font is **JetBrainsMono Nerd Font Mono**
-* Restart terminal
-* Run the font test command
-
-### Plugin errors?
-
+To update your Treesitter parsers:
 ```vim
-:Lazy
-:checkhealth
+:TSUpdate
 ```
-
----
-
-## 🙌 Credits
-
-* Neovim community
-* lazy.nvim
-* Nerd Fonts
 
 ---
 
 ## 📜 License
-
 MIT
-
-```
-
----
-
-## ✅ What I fixed
-- Closed all code blocks properly
-- Restored missing section headers
-- Fixed broken Markdown rendering
-- Cleaned spacing & hierarchy
-- GitHub-friendly formatting
-
-If you want next:
-- Add screenshots section
-- Add keybinding table
-- Add OS-specific install steps
-- Add badges (stars, license, Neovim)
-
-Just tell me 👌
-```

@@ -1,4 +1,5 @@
 return {
+  require("shiv.plugins.formatting"),
   require("shiv.plugins.nvim-tree"),
   require("shiv.plugins.telescope"),
   require("shiv.plugins.lualine"),
