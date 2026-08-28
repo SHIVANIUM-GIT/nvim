@@ -7,4 +7,5 @@ return {
   require("shiv.plugins.gitsigns"),
   require("shiv.plugins.indent-blankline"),
   require("shiv.plugins.undotree"),  
+  require("shiv.plugins.autopairs"),
 }
