@@ -42,3 +42,12 @@ opt.splitbelow = true
 
 -- Performance settings
 opt.lazyredraw = true   
+
+-- show search matches as you type
+opt.incsearch = true 
+
+-- keep 8 lines of context above and below the cursor
+opt.scrolloff = 8
+
+-- set leader key to space
+g.mapleader = " " 
