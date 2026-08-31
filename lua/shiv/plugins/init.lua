@@ -12,4 +12,5 @@ return {
 	require("shiv.plugins.autopairs"),
 	require("shiv.plugins.git-stuff"),
 	require("shiv.plugins.lsp"),
+	require("shiv.plugins.remote-nvim"),
 }
