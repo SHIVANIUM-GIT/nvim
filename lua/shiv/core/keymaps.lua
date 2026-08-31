@@ -46,3 +46,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up" })
 -- spell check keymaps
 keymap.set("n", "<leader>sp", "<cmd>setlocal spell!<CR>", { desc = "Toggle spell check" })
 keymap.set("n", "<leader>ss", "<cmd>Telescope spell_suggest<CR>", { desc = "Spell suggestions in Telescope" })
+
+-- Remote SSH keymaps
+keymap.set("n", "<leader>rs", "<cmd>RemoteStart<CR>", { desc = "Connect to Remote SSH" })
+keymap.set("n", "<leader>rx", "<cmd>RemoteStop<CR>", { desc = "Stop/Disconnect Remote SSH" })
+keymap.set("n", "<leader>ri", "<cmd>RemoteInfo<CR>", { desc = "Show Remote SSH info" })
