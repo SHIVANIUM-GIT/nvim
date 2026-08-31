@@ -1,20 +1,20 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  branch = "master",
+  branch = "main",
+  lazy = false,
   build = ":TSUpdate",
-  event = { "BufReadPost", "BufNewFile" }, -- important!
-
   config = function()
-    -- Bypass Windows git clone permission issues by using curl and tar
-    require("nvim-treesitter.install").prefer_git = false
-    require("nvim-treesitter.install").compilers = { "gcc" }
+    local ts = require("nvim-treesitter")
 
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = { "lua", "bash", "python", "json", "cpp" },
-      auto_install = true,
-      highlight = {
-        enable = true,
-      },
+    ts.setup({
+      install_dir = vim.fn.stdpath("data") .. "/site",
+    })
+
+    -- Enable Treesitter syntax highlighting for buffers in Neovim 0.12+
+    vim.api.nvim_create_autocmd("FileType", {
+      callback = function(args)
+        pcall(vim.treesitter.start, args.buf)
+      end,
     })
   end,
 }

@@ -72,6 +72,11 @@ return {
             },
           },
         })
+      elseif server == "clangd" then
+        vim.lsp.config("clangd", {
+          capabilities = capabilities,
+          filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+        })
       else
         vim.lsp.config(server, {
           capabilities = capabilities,
