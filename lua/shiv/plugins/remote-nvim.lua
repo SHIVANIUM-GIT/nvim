@@ -16,6 +16,16 @@ return {
       end
     end
 
-    require("remote-nvim").setup()
+    local ssh_config = vim.fn.expand("~/.ssh/config")
+    local config_paths = {}
+    if vim.fn.filereadable(ssh_config) == 1 then
+      table.insert(config_paths, ssh_config)
+    end
+
+    require("remote-nvim").setup({
+      ssh_config = {
+        ssh_config_file_paths = config_paths,
+      },
+    })
   end,
 }

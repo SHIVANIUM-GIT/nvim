@@ -51,6 +51,8 @@ return {
         "lua_ls",
         "clangd",
         "pyright",
+        "dockerls",
+        "docker_compose_language_service",
       },
       automatic_installation = true,
     })
@@ -59,7 +61,7 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     -- 4. Setup LSP servers natively for Neovim 0.11+
-    local servers = { "lua_ls", "clangd", "pyright" }
+    local servers = { "lua_ls", "clangd", "pyright", "dockerls", "docker_compose_language_service" }
     for _, server in ipairs(servers) do
       if server == "lua_ls" then
         vim.lsp.config("lua_ls", {
