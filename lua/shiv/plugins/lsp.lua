@@ -30,7 +30,7 @@ return {
       },
       signs = true,
       underline = true,
-      update_in_insert = false, -- Wait until you leave insert mode to update errors
+      update_in_insert = true, -- Keep errors and hints visible while typing
     })
 
     -- 1. Setup Mason (the UI to install LSPs)

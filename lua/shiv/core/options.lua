@@ -6,6 +6,7 @@ local g = vim.g
 opt.relativenumber = true
 opt.number = true
 opt.wrap = false
+opt.termguicolors = true
 
 -- tab settings
 opt.tabstop = 2
@@ -18,8 +19,8 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Cursor settings
-opt.cursorline = true           
-opt.guicursor = "n-v-c:block,i-ci:ver25,r-cr:hor20" 
+opt.cursorline = true
+opt.guicursor = "n-v-c:block,i-ci:ver25,r-cr:hor20"
 
 -- background settings
 cmd("highlight Normal guibg=none")
@@ -39,15 +40,14 @@ opt.clipboard = "unnamedplus"
 opt.splitright = true
 opt.splitbelow = true
 
-
 -- Performance settings
-opt.lazyredraw = true   
+opt.lazyredraw = true
 
 -- show search matches as you type
-opt.incsearch = true 
+opt.incsearch = true
 
 -- keep 8 lines of context above and below the cursor
 opt.scrolloff = 8
 
 -- set leader key to space
-g.mapleader = " " 
+g.mapleader = " "
