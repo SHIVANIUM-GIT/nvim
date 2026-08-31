@@ -42,3 +42,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- Move text up and down
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move text down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up" })
+
+-- spell check keymaps
+keymap.set("n", "<leader>sp", "<cmd>setlocal spell!<CR>", { desc = "Toggle spell check" })
+keymap.set("n", "<leader>ss", "<cmd>Telescope spell_suggest<CR>", { desc = "Spell suggestions in Telescope" })

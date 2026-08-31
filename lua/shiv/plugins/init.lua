@@ -1,4 +1,5 @@
 return {
+	require("shiv.plugins.colorscheme"),
 	require("shiv.plugins.bufferline"),
 	require("shiv.plugins.formatting"),
 	require("shiv.plugins.nvim-tree"),

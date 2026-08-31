@@ -18,6 +18,9 @@ opt.autoindent = true
 opt.ignorecase = true
 opt.smartcase = true
 
+-- spell check settings
+opt.spelllang = "en_us"
+
 -- Cursor settings
 opt.cursorline = true
 opt.guicursor = "n-v-c:block,i-ci:ver25,r-cr:hor20"
