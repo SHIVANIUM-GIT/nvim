@@ -5,8 +5,9 @@ local g = vim.g
 -- General options
 opt.relativenumber = true
 opt.number = true
-opt.wrap = false
+opt.wrap = true;
 opt.termguicolors = true
+opt.linebreak = true;
 
 -- tab settings
 opt.tabstop = 2
