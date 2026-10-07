@@ -11,6 +11,14 @@ keymap.set("n", "<leader>o", "<cmd>w!<CR><cmd>source %<CR>", { desc = "Save and 
 keymap.set("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save current buffer" })
 keymap.set("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit current buffer" })
 
+-- Delete whole word backwards with CTRL+Backspace in insert mode
+keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete whole word backwards" })
+-- Some terminals send <C-h> for Ctrl+Backspace
+keymap.set("i", "<C-h>", "<C-w>", { desc = "Delete whole word backwards (fallback)" })
+
+-- Delete whole word forwards with CTRL+Delete in insert mode
+keymap.set("i", "<C-Del>", "<C-o>dw", { desc = "Delete whole word forwards" })
+
 -- clear search highlights
 
 -- delete single character without copying into register
