@@ -10,8 +10,8 @@ opt.termguicolors = true
 opt.linebreak = true;
 
 -- tab settings
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
@@ -39,6 +39,21 @@ opt.backspace = "indent,eol,start"
 
 -- clipboard settings
 opt.clipboard = "unnamedplus"
+
+-- configure clipboard to work over SSH / remote connections (OSC 52)
+if os.getenv('SSH_CLIENT') or os.getenv('SSH_TTY') then
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+      ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+  }
+end
 
 -- split settings
 opt.splitright = true
