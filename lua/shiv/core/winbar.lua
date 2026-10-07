@@ -10,7 +10,7 @@ vim.opt.updatetime = 200
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   callback = function()
     -- Only run if there is an active LSP client
-    local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
     if #clients == 0 then return end
 
     local params = { textDocument = vim.lsp.util.make_text_document_params() }

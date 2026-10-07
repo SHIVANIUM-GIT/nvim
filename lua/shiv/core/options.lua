@@ -50,8 +50,14 @@ opt.lazyredraw = true
 -- show search matches as you type
 opt.incsearch = true
 
--- keep 8 lines of context above and below the cursor
-opt.scrolloff = 8
+-- keep cursor vertically centered
+opt.scrolloff = 999
 
 -- set leader key to space
 g.mapleader = " "
+
+-- Auto-center cursor at all times (including end of file)
+vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+  pattern = "*",
+  command = "normal! zz",
+})
