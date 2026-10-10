@@ -71,6 +71,7 @@
         │   └── options.lua    # Editor settings (indentation, splits, UI)
         └── plugins/
             ├── init.lua            # Plugin registry aggregator
+            ├── alpha.lua           # Startup dashboard
             ├── autopairs.lua       # Bracket auto-pairing
             ├── colorscheme.lua     # Tango theme & custom highlights
             ├── formatting.lua      # Conform (format-on-save)
@@ -80,6 +81,7 @@
             ├── lsp.lua             # Mason, nvim-cmp, snippets & LSP config
             ├── lualine.lua         # Statusline configuration
             ├── nvim-tree.lua       # File explorer
+            ├── persistence.lua     # Automated session management
             ├── remote-nvim.lua     # Remote SSH development
             ├── smear-cursor.lua    # Animated cursor trail
             ├── telescope.lua       # Fuzzy finder & ripgrep integration
@@ -179,6 +181,15 @@ nvim
 | `n` | `<leader>k` | Move focus to upper split |
 | `n` | `<leader>l` | Move focus to right split |
 
+### Dashboard & Sessions
+
+| Mode | Shortcut | Action |
+| :--- | :--- | :--- |
+| `n` | `<leader>a` | Open Alpha Dashboard |
+| `n` | `<leader>sl` | Restore last session for current directory |
+| `n` | `<leader>ss` | Restore global last session |
+| `n` | `<leader>sd` | Stop session saving |
+
 ### Tabs & Buffers
 
 | Mode | Shortcut | Action |
@@ -265,6 +276,8 @@ nvim
 | Plugin | Description |
 | :--- | :--- |
 | [lazy.nvim](https://github.com/folke/lazy.nvim) | Modern plugin package manager |
+| [alpha-nvim](https://github.com/goolord/alpha-nvim) | Fast and fully customizable greeter / dashboard |
+| [persistence.nvim](https://github.com/folke/persistence.nvim) | Automated session management |
 | [tango-themes](https://github.com/rohan-pckg/tango-themes) | Clean Tango-based color theme |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Quickstart configurations for the Nvim LSP client |
 | [mason.nvim](https://github.com/williamboman/mason.nvim) | Portable package manager for LSPs, DAP, and linters |

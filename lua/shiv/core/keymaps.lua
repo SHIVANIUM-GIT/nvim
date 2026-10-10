@@ -59,3 +59,11 @@ keymap.set("n", "<leader>ss", "<cmd>Telescope spell_suggest<CR>", { desc = "Spel
 keymap.set("n", "<leader>rs", "<cmd>RemoteStart<CR>", { desc = "Connect to Remote SSH" })
 keymap.set("n", "<leader>rx", "<cmd>RemoteStop<CR>", { desc = "Stop/Disconnect Remote SSH" })
 keymap.set("n", "<leader>ri", "<cmd>RemoteInfo<CR>", { desc = "Show Remote SSH info" })
+
+-- Session management (Persistence)
+keymap.set("n", "<leader>sl", [[<cmd>lua require("persistence").load()<cr>]], { desc = "Restore last session for current dir" })
+keymap.set("n", "<leader>ss", [[<cmd>lua require("persistence").load({ last = true })<cr>]], { desc = "Restore last session (global)" })
+keymap.set("n", "<leader>sd", [[<cmd>lua require("persistence").stop()<cr>]], { desc = "Stop session saving" })
+
+-- Dashboard
+keymap.set("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Open Alpha Dashboard" })

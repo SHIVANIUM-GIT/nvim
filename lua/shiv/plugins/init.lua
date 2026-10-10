@@ -14,4 +14,5 @@ return {
 	require("shiv.plugins.remote-nvim"),
 	require("shiv.plugins.smear-cursor"),
 	require("shiv.plugins.alpha"),
+	require("shiv.plugins.persistence"),
 }
