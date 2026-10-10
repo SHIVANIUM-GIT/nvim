@@ -42,7 +42,7 @@
 ## ✨ Features
 
 - ⚡ **Blazing Fast Startup**: Fully asynchronous lazy-loading driven by [`lazy.nvim`](https://github.com/folke/lazy.nvim).
-- 🎨 **Sleek & Transparent UI**: Powered by **Tango Themes**, [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) statusline, and [`bufferline.nvim`](https://github.com/akinsho/bufferline.nvim) tab bar with transparent background support.
+- 🎨 **Sleek & Transparent UI**: Powered by **Tango Themes** and [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) statusline with transparent background support.
 - 🧠 **Native Neovim 0.11+ LSP**: Integrated with `vim.lsp.config`, [`mason.nvim`](https://github.com/williamboman/mason.nvim), and [`mason-lspconfig.nvim`](https://github.com/williamboman/mason-lspconfig.nvim) for effortless language server management.
 - 💡 **Intelligent Autocompletion**: Comprehensive auto-suggestions powered by [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) with snippets via [`LuaSnip`](https://github.com/L3MON4D3/LuaSnip).
 - 🪄 **Formatting on Save**: Zero-lag asynchronous code formatting with [`conform.nvim`](https://github.com/stevearc/conform.nvim) (Lua, Python, C/C++).
@@ -72,7 +72,6 @@
         └── plugins/
             ├── init.lua            # Plugin registry aggregator
             ├── autopairs.lua       # Bracket auto-pairing
-            ├── bufferline.lua      # VS Code-like buffer/tab line
             ├── colorscheme.lua     # Tango theme & custom highlights
             ├── formatting.lua      # Conform (format-on-save)
             ├── git-stuff.lua       # Git fugitive shortcuts
@@ -184,8 +183,6 @@ nvim
 
 | Mode | Shortcut | Action |
 | :--- | :--- | :--- |
-| `n` | `<Tab>` | Cycle to next buffer (BufferLine) |
-| `n` | `<S-Tab>` | Cycle to previous buffer (BufferLine) |
 | `n` | `<leader>bd` | Close current buffer |
 | `n` | `<leader>bo` | Close all other buffers |
 | `n` | `<leader>bp` | Toggle pin on current buffer |
@@ -278,7 +275,6 @@ nvim
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | Nvim Treesitter configurations and abstraction layer |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) | Highly extendable fuzzy finder over lists |
 | [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) | File explorer tree for Neovim |
-| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | Snazzy buffer and tab line |
 | [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) | Fast and easy to configure Neovim statusline |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git decorations and hunks in the sign column |
 | [vim-fugitive](https://github.com/tpope/vim-fugitive) | The premier Git wrapper for (Neo)vim |

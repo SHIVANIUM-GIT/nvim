@@ -1,6 +1,5 @@
 return {
 	require("shiv.plugins.colorscheme"),
-	require("shiv.plugins.barbar"),
 	require("shiv.plugins.formatting"),
 	require("shiv.plugins.nvim-tree"),
 	require("shiv.plugins.telescope"),
