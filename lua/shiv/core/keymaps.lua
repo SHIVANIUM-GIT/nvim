@@ -40,6 +40,12 @@ keymap.set("n", "<leader>j", "<C-w>j", { desc = "Move to bottom split" })
 keymap.set("n", "<leader>k", "<C-w>k", { desc = "Move to top split" })
 keymap.set("n", "<leader>l", "<C-w>l", { desc = "Move to right split" })
 
+-- buffer management
+keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close current buffer" })
+keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Go to next buffer" })
+keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Go to previous buffer" })
+keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", { desc = "Close all other buffers" })
+
 -- tab management
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
