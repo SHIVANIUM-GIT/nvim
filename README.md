@@ -42,7 +42,7 @@
 ## ✨ Features
 
 - ⚡ **Blazing Fast Startup**: Fully asynchronous lazy-loading driven by [`lazy.nvim`](https://github.com/folke/lazy.nvim).
-- 🎨 **Sleek & Transparent UI**: Powered by **Nightfox (`carbonfox`)**, [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) statusline, and [`bufferline.nvim`](https://github.com/akinsho/bufferline.nvim) tab bar with transparent background support.
+- 🎨 **Sleek & Transparent UI**: Powered by **Tango Themes**, [`lualine.nvim`](https://github.com/nvim-lualine/lualine.nvim) statusline, and [`bufferline.nvim`](https://github.com/akinsho/bufferline.nvim) tab bar with transparent background support.
 - 🧠 **Native Neovim 0.11+ LSP**: Integrated with `vim.lsp.config`, [`mason.nvim`](https://github.com/williamboman/mason.nvim), and [`mason-lspconfig.nvim`](https://github.com/williamboman/mason-lspconfig.nvim) for effortless language server management.
 - 💡 **Intelligent Autocompletion**: Comprehensive auto-suggestions powered by [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) with snippets via [`LuaSnip`](https://github.com/L3MON4D3/LuaSnip).
 - 🪄 **Formatting on Save**: Zero-lag asynchronous code formatting with [`conform.nvim`](https://github.com/stevearc/conform.nvim) (Lua, Python, C/C++).
@@ -73,7 +73,7 @@
             ├── init.lua            # Plugin registry aggregator
             ├── autopairs.lua       # Bracket auto-pairing
             ├── bufferline.lua      # VS Code-like buffer/tab line
-            ├── colorscheme.lua     # Nightfox / Carbonfox theme
+            ├── colorscheme.lua     # Tango theme & custom highlights
             ├── formatting.lua      # Conform (format-on-save)
             ├── git-stuff.lua       # Git fugitive shortcuts
             ├── gitsigns.lua        # Git signs & gutter indicators
@@ -82,6 +82,7 @@
             ├── lualine.lua         # Statusline configuration
             ├── nvim-tree.lua       # File explorer
             ├── remote-nvim.lua     # Remote SSH development
+            ├── smear-cursor.lua    # Animated cursor trail
             ├── telescope.lua       # Fuzzy finder & ripgrep integration
             ├── treesitter.lua      # Treesitter syntax highlighting
             └── undotree.lua        # Visual undo history manager
@@ -267,7 +268,7 @@ nvim
 | Plugin | Description |
 | :--- | :--- |
 | [lazy.nvim](https://github.com/folke/lazy.nvim) | Modern plugin package manager |
-| [nightfox.nvim](https://github.com/EdenEast/nightfox.nvim) | Carbonfox aesthetic color theme |
+| [tango-themes](https://github.com/rohan-pckg/tango-themes) | Clean Tango-based color theme |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) | Quickstart configurations for the Nvim LSP client |
 | [mason.nvim](https://github.com/williamboman/mason.nvim) | Portable package manager for LSPs, DAP, and linters |
 | [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) | Extension to mason.nvim that makes it easier to use lspconfig |
@@ -284,6 +285,7 @@ nvim
 | [remote-nvim.nvim](https://github.com/amitds1997/remote-nvim.nvim) | Remote development over SSH |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) | Visual indentation guides |
 | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) | Autopair plugin with Treesitter integration |
+| [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | Animated cursor trail |
 | [undotree](https://github.com/mbbill/undotree) | Visualizer for undo history branches |
 
 ---
