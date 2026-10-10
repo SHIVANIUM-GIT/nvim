@@ -25,6 +25,10 @@ opt.spelllang = "en_us"
 -- Cursor settings
 opt.cursorline = true
 opt.guicursor = "n-v-c:block,i-ci:ver25,r-cr:hor20"
+opt.virtualedit = "onemore" -- Allow cursor to move one space past the end of the line
+
+-- Allow left/right arrow keys to wrap to the next/previous line
+opt.whichwrap:append("<,>,[,]")
 
 -- background settings
 cmd("highlight Normal guibg=none")
