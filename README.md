@@ -165,6 +165,8 @@ nvim
 | Mode | Shortcut | Action |
 | :--- | :--- | :--- |
 | `i` | `jk` | Fast exit from insert mode |
+| `i` | `<C-BS>` / `<C-h>` | Delete whole word backwards in insert mode |
+| `i` | `<C-Del>` | Delete whole word forwards in insert mode |
 | `n` | `<leader>w` | Save current file (`:w!`) |
 | `n` | `<leader>q` | Quit current window (`:quit`) |
 | `n` | `<leader>o` | Save and reload/source current file |
@@ -190,13 +192,21 @@ nvim
 | `n` | `<leader>ss` | Restore global last session |
 | `n` | `<leader>sd` | Stop session saving |
 
+### Floating Terminal
+
+| Mode | Shortcut | Action |
+| :--- | :--- | :--- |
+| `n` / `t` | `<leader>tt` | Toggle centered floating terminal (`:Floaterminal`) |
+| `t` | `<Esc><Esc>` | Exit terminal mode to normal mode |
+
 ### Tabs & Buffers
 
 | Mode | Shortcut | Action |
 | :--- | :--- | :--- |
-| `n` | `<leader>bd` | Close current buffer |
+| `n` | `<leader>bd` | Close current buffer (`:bdelete`) |
+| `n` | `<leader>bn` | Go to next buffer (`:bnext`) |
+| `n` | `<leader>bp` | Go to previous buffer (`:bprevious`) |
 | `n` | `<leader>bo` | Close all other buffers |
-| `n` | `<leader>bp` | Toggle pin on current buffer |
 | `n` | `<leader>to` | Open new tab page |
 | `n` | `<leader>tx` | Close current tab page |
 | `n` | `<leader>tn` | Switch to next tab page |
@@ -216,6 +226,8 @@ nvim
 | `n` | `<leader>fg` | Live grep string in project (`ripgrep`) |
 | `n` | `<leader>fs` | Find word under cursor in project |
 | `n` | `<leader>fb` | Search active buffers |
+| `n` | `<leader>fk` / `<leader>?` | **Search & display all keymaps (Help)** |
+| `n` | `<leader>fh` | Search Neovim help documentation tags |
 
 ### LSP & Code Intelligence
 

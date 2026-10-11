@@ -15,6 +15,9 @@ return {
     { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find string in cwd" },
     { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Find string under cursor in cwd" },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Fuzzy find open buffers" },
+    { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Search available keymaps" },
+    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Search help tags" },
+    { "<leader>?", "<cmd>Telescope keymaps<cr>", desc = "Show keymaps help" },
   },
   
   config = function()
