@@ -72,6 +72,7 @@
         └── plugins/
             ├── init.lua            # Plugin registry aggregator
             ├── alpha.lua           # Startup dashboard
+            ├── assembly.lua        # Inline assembly inspector (C, C++, Rust)
             ├── autopairs.lua       # Bracket auto-pairing
             ├── colorscheme.lua     # Tango theme & custom highlights
             ├── formatting.lua      # Conform (format-on-save)
@@ -247,9 +248,12 @@ nvim
 | `n` | `<leader>D` | Show buffer diagnostics list (Telescope) |
 | `n` | `[d` | Jump to previous diagnostic |
 | `n` | `]d` | Jump to next diagnostic |
+| `n/v`| `<leader>as` | Show inline compiler assembly for function/selection (`AssemblyForNeovim`) |
 | `i` | `<C-j>` / `<C-k>` | Navigate completion items |
 | `i` | `<C-Space>` | Trigger autocompletion |
 | `i` | `<CR>` | Confirm autocompletion item |
+
+> **💡 Assembly Inspector (`<leader>as`):** Inside the floating window, press `+` / `-` to toggle optimization levels (`-O0` through `-Os`), `R` to recompile, and `q` to close. Automatically integrates with `compile_commands.json`.
 
 ### Formatting & Utilities
 
@@ -308,6 +312,7 @@ nvim
 | [nvim-autopairs](https://github.com/windwp/nvim-autopairs) | Autopair plugin with Treesitter integration |
 | [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | Animated cursor trail |
 | [undotree](https://github.com/mbbill/undotree) | Visualizer for undo history branches |
+| [AssemblyForNeovim](https://github.com/0xdeadf1sh/AssemblyForNeovim) | Floating inline compiler assembly inspector for C, C++, and Rust |
 
 ---
 

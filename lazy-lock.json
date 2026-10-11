@@ -1,4 +1,5 @@
 {
+  "AssemblyForNeovim": { "branch": "main", "commit": "148cec5132fb9c382ef41b71eca801b88b569349" },
   "LuaSnip": { "branch": "master", "commit": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24" },
   "alpha-nvim": { "branch": "main", "commit": "4ba26e41990c11620c96c0e1cff20eab65efde4a" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },

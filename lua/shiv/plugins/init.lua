@@ -15,4 +15,5 @@ return {
 	require("shiv.plugins.smear-cursor"),
 	require("shiv.plugins.alpha"),
 	require("shiv.plugins.persistence"),
+	require("shiv.plugins.assembly"),
 }
