@@ -6,6 +6,6 @@ return {
   --   -- trailing_stiffness = 0.3,
   --   -- distance_stop_animating = 0.1,
   --   hide_target_hack = true,
-  --   cursor_color = "#FF0000",
+  cursor_color = "#FF0000",
   }
 }

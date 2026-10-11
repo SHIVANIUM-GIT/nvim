@@ -66,7 +66,7 @@
         ├── init.lua           # Loads core configuration & lazy setup
         ├── lazy.lua           # lazy.nvim bootstrap and configuration
         ├── core/
-        │   ├── init.lua       # Loads options and general keymaps
+        │   ├── init.lua       # Loads options & keymaps
         │   ├── keymaps.lua    # Global keybindings & leader mappings
         │   └── options.lua    # Editor settings (indentation, splits, UI)
         └── plugins/
@@ -74,6 +74,7 @@
             ├── alpha.lua           # Startup dashboard
             ├── assembly.lua        # Inline assembly inspector (C, C++, Rust)
             ├── autopairs.lua       # Bracket auto-pairing
+            ├── bufferline.lua      # VS Code-like top tabs & buffer manager
             ├── colorscheme.lua     # Tango theme & custom highlights
             ├── formatting.lua      # Conform (format-on-save)
             ├── git-stuff.lua       # Git fugitive shortcuts
@@ -81,11 +82,13 @@
             ├── indent-blankline.lua# Clean indentation guides
             ├── lsp.lua             # Mason, nvim-cmp, snippets & LSP config
             ├── lualine.lua         # Statusline configuration
+            ├── mini.lua            # Mini.nvim (ai, surround, move, splitjoin, bufremove)
             ├── nvim-tree.lua       # File explorer
             ├── persistence.lua     # Automated session management
             ├── remote-nvim.lua     # Remote SSH development
             ├── smear-cursor.lua    # Animated cursor trail
             ├── telescope.lua       # Fuzzy finder & ripgrep integration
+            ├── toggleterm.lua      # Multi-instance terminal manager
             ├── treesitter.lua      # Treesitter syntax highlighting
             └── undotree.lua        # Visual undo history manager
 ```
@@ -193,26 +196,44 @@ nvim
 | `n` | `<leader>ss` | Restore global last session |
 | `n` | `<leader>sd` | Stop session saving |
 
-### Floating Terminal
+### Integrated Terminal (ToggleTerm)
 
 | Mode | Shortcut | Action |
 | :--- | :--- | :--- |
-| `n` / `t` | `<leader>tt` | Toggle centered floating terminal (`:Floaterminal`) |
-| `t` | `<Esc><Esc>` | Exit terminal mode to normal mode |
+| `n` | `<leader>tt` | Toggle centered floating terminal |
+| `n` | `<leader>th` | Toggle bottom horizontal split terminal (ideal for build output) |
+| `n` | `<leader>tv` | Toggle side vertical split terminal |
+| `n` / `t` | `<C-\>` | Toggle default terminal |
+| `t` | `<Esc><Esc>` / `jk` | Exit terminal mode to normal mode |
+| `t` | `<C-h>` / `<C-j>` / `<C-k>` / `<C-l>` | Jump to other windows directly from inside terminal |
 
-### Tabs & Buffers
+### Tabs & Buffers (Bufferline)
 
 | Mode | Shortcut | Action |
 | :--- | :--- | :--- |
+| `n` | `<Tab>` | Cycle to next buffer / tab |
+| `n` | `<S-Tab>` | Cycle to previous buffer / tab |
 | `n` | `<leader>bd` | Close current buffer (`:bdelete`) |
-| `n` | `<leader>bn` | Go to next buffer (`:bnext`) |
-| `n` | `<leader>bp` | Go to previous buffer (`:bprevious`) |
 | `n` | `<leader>bo` | Close all other buffers |
+| `n` | `<leader>bp` | Toggle pin on current buffer |
+| `n` | `<leader>bl` | Close all buffers to the right |
+| `n` | `<leader>bh` | Close all buffers to the left |
 | `n` | `<leader>to` | Open new tab page |
 | `n` | `<leader>tx` | Close current tab page |
 | `n` | `<leader>tn` | Switch to next tab page |
 | `n` | `<leader>tp` | Switch to previous tab page |
 | `n` | `<leader>tf` | Open current buffer in new tab |
+
+### Code Editing & Navigation (mini.nvim)
+
+| Mode | Shortcut | Action |
+| :--- | :--- | :--- |
+| `n` | `sa{motion}{char}` | Add surrounding (e.g. `saiw"` surrounds word with `"`) |
+| `n` | `sd{char}` | Delete surrounding (e.g. `sd"` removes `"`) |
+| `n` | `sr{old}{new}` | Replace surrounding (e.g. `sr"'` replaces `"` with `'`) |
+| `n` / `v` | `<M-h>` / `<M-j>` / `<M-k>` / `<M-l>` | Move active line or visual block (Alt + H/J/K/L) |
+| `n` | `gS` | Toggle split / join arguments or lists |
+| `v` / `o` | `va)` / `va]`, etc. | Extended textobjects (brackets, function `vaf`, argument `vaa`) |
 
 ### File Navigation & Search (Telescope & Nvim-Tree)
 
@@ -313,6 +334,9 @@ nvim
 | [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) | Animated cursor trail |
 | [undotree](https://github.com/mbbill/undotree) | Visualizer for undo history branches |
 | [AssemblyForNeovim](https://github.com/0xdeadf1sh/AssemblyForNeovim) | Floating inline compiler assembly inspector for C, C++, and Rust |
+| [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Persistent, multi-instance terminal manager (float, split, tab) |
+| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) | Snazzy VS Code-style buffer & tab line with slanted tabs |
+| [mini.nvim](https://github.com/echasnovski/mini.nvim) | Modular library: mini.ai, mini.surround, mini.move, mini.splitjoin, mini.bufremove |
 
 ---
 

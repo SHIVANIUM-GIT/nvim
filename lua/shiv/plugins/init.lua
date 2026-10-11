@@ -16,4 +16,8 @@ return {
 	require("shiv.plugins.alpha"),
 	require("shiv.plugins.persistence"),
 	require("shiv.plugins.assembly"),
+	require("shiv.plugins.toggleterm"),
+	require("shiv.plugins.bufferline"),
+	require("shiv.plugins.mini"),
 }
+
