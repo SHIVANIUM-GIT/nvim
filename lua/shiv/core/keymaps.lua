@@ -19,10 +19,13 @@ keymap.set("i", "<C-h>", "<C-w>", { desc = "Delete whole word backwards (fallbac
 -- Delete whole word forwards with CTRL+Delete in insert mode
 keymap.set("i", "<C-Del>", "<C-o>dw", { desc = "Delete whole word forwards" })
 
--- clear search highlights
+-- Half-page jumping with cursor centered in screen
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll half-page down and center cursor" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll half-page up and center cursor" })
 
--- delete single character without copying into register
--- keymap.set("n", "x", '"_x')
+-- Search results centered
+keymap.set("n", "n", "nzzzv", { desc = "Next search match and center" })
+keymap.set("n", "N", "Nzzzv", { desc = "Previous search match and center" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment

@@ -176,6 +176,9 @@ nvim
 | `n` | `<leader>o` | Save and reload/source current file |
 | `n` | `<leader>+` | Increment number under cursor |
 | `n` | `<leader>-` | Decrement number under cursor |
+| `n` | `<C-d>` | Scroll half-page down with cursor centered (`<C-d>zz`) |
+| `n` | `<C-u>` | Scroll half-page up with cursor centered (`<C-u>zz`) |
+| `n` | `n` / `N` | Jump to next / previous search match centered (`nzzzv`) |
 | `v` | `J` | Move selected line(s) down |
 | `v` | `K` | Move selected line(s) up |
 | `n` | `<leader>sv` | Split window vertically (`:vsplit`) |
