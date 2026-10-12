@@ -184,7 +184,7 @@ return {
             "--header-insertion=iwyu",
             "--completion-style=detailed",
             "--function-arg-placeholders",
-            "--fallback-style=llvm",
+            "--fallback-style=Google",
           },
           filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
         })

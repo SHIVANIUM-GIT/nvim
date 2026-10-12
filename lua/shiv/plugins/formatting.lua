@@ -18,6 +18,11 @@ return {
         async = false,
         timeout_ms = 3000,
       },
+      formatters = {
+        ["clang-format"] = {
+          prepend_args = { "--style={BasedOnStyle: LLVM, PointerAlignment: Left}" },
+        },
+      },
     })
 
     -- Automatically format C/C++ includes on save (BufWritePre)
