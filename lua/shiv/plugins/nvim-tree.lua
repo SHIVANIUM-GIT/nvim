@@ -50,5 +50,8 @@ return {
         ignore = false,
       },
     })
-  end
+
+    -- Automatically update C/C++ #include lines across project when files are renamed in nvim-tree
+    require("shiv.tools.include_rename").setup(require("nvim-tree.api"))
+  end,
 }
