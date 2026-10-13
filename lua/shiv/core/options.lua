@@ -64,19 +64,14 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Performance settings
-opt.lazyredraw = true
+opt.lazyredraw = false -- false is required in Neovim to prevent floating windows and popups from flickering/glitching
 
 -- show search matches as you type
 opt.incsearch = true
 
--- keep cursor vertically centered
-opt.scrolloff = 999
+-- comfortable scroll offset (keeps context around cursor without jumping/shaking)
+opt.scrolloff = 8
+opt.pumheight = 10 -- limit popup menu height so it doesn't overflow screen
 
 -- set leader key to space
 g.mapleader = " "
-
--- Auto-center cursor at all times (including end of file)
-vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-  pattern = "*",
-  command = "normal! zz",
-})

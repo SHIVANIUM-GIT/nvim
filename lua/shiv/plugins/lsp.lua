@@ -66,8 +66,7 @@ return {
       },
       signs = true,
       underline = true,
-      -- PERFORMANCE: false prevents re-parsing errors on every keystroke, keeping typing at 120fps
-      update_in_insert = false,
+      update_in_insert = true, -- show inline errors live even while typing in insert mode
       severity_sort = true,
     })
 
@@ -273,7 +272,7 @@ return {
         debounce = 60, -- 60ms debounce keeps typing lag-free
         throttle = 30,
         fetching_timeout = 200, -- drop slow sources so editor never freezes
-        max_view_entries = 25,  -- prevent rendering slowdowns
+        max_view_entries = 12,  -- keep popup compact so it fits comfortably on screen without flipping
       },
       snippet = {
         expand = function(args)
@@ -295,10 +294,10 @@ return {
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm({ select = false }), -- select = false prevents accidental auto-accept on newline
+        -- Tab is the autocompleter (Enter does not confirm completion, inserts newline)
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
-            cmp.select_next_item()
+            cmp.confirm({ select = true })
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           else
@@ -337,7 +336,7 @@ return {
         end,
       },
       experimental = {
-        ghost_text = true, -- Modern Copilot-style inline ghost completion
+        ghost_text = false, -- disabled to prevent line wrapping and screen shaking at end of line
       },
     })
 

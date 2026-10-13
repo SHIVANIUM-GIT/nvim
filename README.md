@@ -275,7 +275,8 @@ nvim
 | `n/v`| `<leader>as` | Show inline compiler assembly for function/selection (`AssemblyForNeovim`) |
 | `i` | `<C-j>` / `<C-k>` | Navigate completion items |
 | `i` | `<C-Space>` | Trigger autocompletion |
-| `i` | `<CR>` | Confirm autocompletion item |
+| `i` | `<Tab>` | Confirm autocompletion item / Expand snippet |
+| `i` | `<CR>` | Insert newline (does not autocomplete) |
 
 > **💡 Assembly Inspector (`<leader>as`):** Inside the floating window, press `+` / `-` to toggle optimization levels (`-O0` through `-Os`), `R` to recompile, and `q` to close. Automatically integrates with `compile_commands.json`.
 
