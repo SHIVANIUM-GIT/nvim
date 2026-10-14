@@ -63,6 +63,9 @@ end
 opt.splitright = true
 opt.splitbelow = true
 
+-- persistent undo (enables undo history tracking across restarts for undotree)
+opt.undofile = true
+
 -- Performance settings
 opt.lazyredraw = false -- false is required in Neovim to prevent floating windows and popups from flickering/glitching
 

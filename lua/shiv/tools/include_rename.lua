@@ -217,19 +217,43 @@ local function rewrite_lines(lang, lines, old_stem, new_stem, replacements)
   return changed
 end
 
+local IGNORED_DIRS = {
+  [".git"] = true,
+  ["node_modules"] = true,
+  [".venv"] = true,
+  ["venv"] = true,
+  ["target"] = true,
+  ["build"] = true,
+  ["dist"] = true,
+  [".cache"] = true,
+}
+
+local function get_project_files(dir)
+  local files = {}
+  local function scan(current_dir)
+    local ok, iter = pcall(vim.fs.dir, current_dir)
+    if not ok or not iter then return end
+    for name, type in iter do
+      if type == "directory" then
+        if not IGNORED_DIRS[name] then
+          scan(current_dir .. "/" .. name)
+        end
+      elseif type == "file" then
+        files[#files + 1] = current_dir .. "/" .. name
+      end
+    end
+  end
+  scan(dir)
+  return files
+end
+
 local function rewrite_references_in_project(lang, old_abs, new_abs)
   local replacements, root = compute_replacements(old_abs, new_abs)
   local old_stem = filename_stem(old_abs)
   local new_stem = filename_stem(new_abs)
 
   local changed_files = 0
-  local files = vim.fs.find(function()
-    return true
-  end, {
-    path = root,
-    type = "file",
-    limit = math.huge,
-  })
+  local files = get_project_files(root)
 
   for _, file in ipairs(files) do
     if is_lang_file(file, lang) and file ~= new_abs then

@@ -44,7 +44,14 @@ keymap.set("n", "<leader>k", "<C-w>k", { desc = "Move to top split" })
 keymap.set("n", "<leader>l", "<C-w>l", { desc = "Move to right split" })
 
 -- buffer management
-keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close current buffer" })
+keymap.set("n", "<leader>bd", function()
+  local ok, bufremove = pcall(require, "mini.bufremove")
+  if ok then
+    bufremove.delete(0, false)
+  else
+    vim.cmd("bdelete")
+  end
+end, { desc = "Close current buffer (preserving splits)" })
 keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Go to next buffer" })
 keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Go to previous buffer" })
 keymap.set("n", "<leader>bo", "<cmd>%bd|e#|bd#<CR>", { desc = "Close all other buffers" })
@@ -62,7 +69,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up" })
 
 -- spell check keymaps
 keymap.set("n", "<leader>sp", "<cmd>setlocal spell!<CR>", { desc = "Toggle spell check" })
-keymap.set("n", "<leader>ss", "<cmd>Telescope spell_suggest<CR>", { desc = "Spell suggestions in Telescope" })
+keymap.set("n", "<leader>sS", "<cmd>Telescope spell_suggest<CR>", { desc = "Spell suggestions in Telescope" })
 
 -- Remote SSH keymaps
 keymap.set("n", "<leader>rs", "<cmd>RemoteStart<CR>", { desc = "Connect to Remote SSH" })
@@ -72,6 +79,7 @@ keymap.set("n", "<leader>ri", "<cmd>RemoteInfo<CR>", { desc = "Show Remote SSH i
 -- Session management (Persistence)
 keymap.set("n", "<leader>sl", [[<cmd>lua require("persistence").load()<cr>]], { desc = "Restore last session for current dir" })
 keymap.set("n", "<leader>ss", [[<cmd>lua require("persistence").load({ last = true })<cr>]], { desc = "Restore last session (global)" })
+keymap.set("n", "<leader>sg", [[<cmd>lua require("persistence").load({ last = true })<cr>]], { desc = "Restore last session (global alias)" })
 keymap.set("n", "<leader>sd", [[<cmd>lua require("persistence").stop()<cr>]], { desc = "Stop session saving" })
 
 -- Dashboard

@@ -239,7 +239,7 @@ local function format_block(bufnr, include_items)
 
     for _, p in ipairs(quoted) do
       if filename_stem(p) == self_stem then
-        self_inc = self_inc and math.min(self_inc, p) or p
+        self_inc = (self_inc and self_inc < p) and self_inc or p
       end
     end
 

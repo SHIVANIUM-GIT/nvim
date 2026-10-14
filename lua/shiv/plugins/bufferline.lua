@@ -5,9 +5,18 @@ return {
   lazy = false,
   keys = {
     { "<Tab>", "<cmd>BufferLineCycleNext<CR>", desc = "Next Buffer" },
-    { "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", desc = "Previous Buffer" },
-    { "<leader>bd", "<cmd>bdelete<CR>", desc = "Close Current Buffer" },
-    { "<leader>bo", "<cmd>BufferLineCloseOthers<CR>", desc = "Close Other Buffers" },
+    {
+      "<leader>bd",
+      function()
+        local ok, bufremove = pcall(require, "mini.bufremove")
+        if ok then
+          bufremove.delete(0, false)
+        else
+          vim.cmd("bdelete")
+        end
+      end,
+      desc = "Close Current Buffer",
+    },
     { "<leader>bp", "<cmd>BufferLineTogglePin<CR>", desc = "Toggle Pin Buffer" },
     { "<leader>bl", "<cmd>BufferLineCloseRight<CR>", desc = "Close Buffers to Right" },
     { "<leader>bh", "<cmd>BufferLineCloseLeft<CR>", desc = "Close Buffers to Left" },

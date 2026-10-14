@@ -196,7 +196,7 @@ nvim
 | :--- | :--- | :--- |
 | `n` | `<leader>a` | Open Alpha Dashboard |
 | `n` | `<leader>sl` | Restore last session for current directory |
-| `n` | `<leader>ss` | Restore global last session |
+| `n` | `<leader>ss` / `<leader>sg` | Restore global last session |
 | `n` | `<leader>sd` | Stop session saving |
 
 ### Integrated Terminal (ToggleTerm)
@@ -216,7 +216,7 @@ nvim
 | :--- | :--- | :--- |
 | `n` | `<Tab>` | Cycle to next buffer / tab |
 | `n` | `<S-Tab>` | Cycle to previous buffer / tab |
-| `n` | `<leader>bd` | Close current buffer (`:bdelete`) |
+| `n` | `<leader>bd` | Close current buffer (safely preserves window splits) |
 | `n` | `<leader>bo` | Close all other buffers |
 | `n` | `<leader>bp` | Toggle pin on current buffer |
 | `n` | `<leader>bl` | Close all buffers to the right |
@@ -287,7 +287,7 @@ nvim
 | `n/v`| `<leader>mp` | Format buffer or selection via Conform |
 | `n` | `<leader>u` | Toggle visual UndoTree panel |
 | `n` | `<leader>sp` | Toggle spell checking |
-| `n` | `<leader>ss` | Show spell suggestions in Telescope |
+| `n` | `<leader>sS` | Show spell suggestions in Telescope |
 
 ### Git Workflow (Fugitive & Gitsigns)
 
