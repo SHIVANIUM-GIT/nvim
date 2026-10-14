@@ -16,7 +16,7 @@ return {
       end
     end
 
-    local ssh_config = vim.fn.expand("~/.ssh/config")
+    local ssh_config = vim.fn.expand("~/.ssh/config"):gsub("\\", "/")
     local config_paths = {}
     if vim.fn.filereadable(ssh_config) == 1 then
       table.insert(config_paths, ssh_config)
