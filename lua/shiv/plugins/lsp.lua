@@ -70,12 +70,12 @@ return {
       severity_sort = true,
     })
 
-    -- Rounded borders for LSP popups (hover & signature help) without deprecated vim.lsp.with
-    vim.lsp.handlers["textDocument/hover"] = function(err, result, ctx, config)
-      return vim.lsp.handlers.hover(err, result, ctx, vim.tbl_extend("force", config or {}, { border = "rounded" }))
-    end
-    vim.lsp.handlers["textDocument/signatureHelp"] = function(err, result, ctx, config)
-      return vim.lsp.handlers.signature_help(err, result, ctx, vim.tbl_extend("force", config or {}, { border = "rounded" }))
+    -- Rounded borders for LSP popups (hover & signature help)
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or "rounded"
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
     end
 
     -- 1. Setup Mason
@@ -381,7 +381,9 @@ return {
         keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
         opts.desc = "Show documentation for what is under cursor"
-        keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        keymap.set("n", "K", function()
+          vim.lsp.buf.hover({ border = "rounded" })
+        end, opts)
 
         -- Toggle Inlay Hints (Rust, Clangd, Pyright, etc.)
         opts.desc = "Toggle Inlay Hints"

@@ -5,9 +5,9 @@ return {
   config = function()
     vim.cmd.colorscheme("tango")
 
-    -- Enable transparent background manually
+    -- Enable transparent background manually (keep NormalFloat solid so hover/popups don't overlap underlying code)
     local hl_groups = {
-      "Normal", "NormalNC", "NormalFloat", "LineNr", "EndOfBuffer", 
+      "Normal", "NormalNC", "LineNr", "EndOfBuffer", 
       "SignColumn", "FoldColumn", "VertSplit", "WinSeparator"
     }
     for _, name in ipairs(hl_groups) do
