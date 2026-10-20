@@ -99,6 +99,7 @@ return {
         "rust_analyzer",
         "dockerls",
         "docker_compose_language_service",
+        "marksman",
       },
       automatic_installation = true,
     })
@@ -154,6 +155,7 @@ return {
       "rust_analyzer",
       "dockerls",
       "docker_compose_language_service",
+      "marksman",
     }
 
     for _, server in ipairs(servers) do
